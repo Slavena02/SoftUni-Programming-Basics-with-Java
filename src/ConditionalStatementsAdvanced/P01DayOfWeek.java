@@ -10,10 +10,8 @@ public class P01DayOfWeek {
 
         if(dayOfWeek == 1){
             System.out.println("Monday");
-
         }else if ( dayOfWeek == 2){
             System.out.println("Tuesday");
-
         }else if (dayOfWeek == 3){
             System.out.println("Wednesday");
         }else if (dayOfWeek == 4){
