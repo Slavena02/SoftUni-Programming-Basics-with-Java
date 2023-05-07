@@ -7,12 +7,12 @@ public class P02SummerOutfit {
         Scanner scanner = new Scanner(System.in);
 
         int degrees = Integer.parseInt(scanner.nextLine());
-        String day = scanner.nextLine();
+        String dayOfDay = scanner.nextLine();
 
         String outfit = " ";
         String shoes = " ";
 
-        if (day.equals("Morning")) {
+        if (dayOfDay.equals("Morning")) {
 
             if (degrees >= 10 && degrees <= 18) {
                 outfit = "Sweatshirt";
@@ -25,7 +25,7 @@ public class P02SummerOutfit {
                 shoes = "Sandals";
             }
         }
-           if (day.equals("Afternoon")) {
+           if (dayOfDay.equals("Afternoon")) {
                if (degrees >= 10 && degrees <= 18) {
                    outfit = "Shirt";
                    shoes = "Moccasins";
@@ -38,7 +38,7 @@ public class P02SummerOutfit {
                }
            }
 
-        if (day.equals("Evening")) {
+        if (dayOfDay.equals("Evening")) {
             outfit = "Shirt";
             shoes = "Moccasins";
 
