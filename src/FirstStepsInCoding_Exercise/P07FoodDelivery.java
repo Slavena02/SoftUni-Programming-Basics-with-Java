@@ -18,8 +18,8 @@ public class P07FoodDelivery {
 
         double desert = totalSumPrice * 0.2;
 
-        double totalSum = totalSumPrice + desert + 2.50;
+        double totalSumMenu = totalSumPrice + desert + 2.50;
 
-        System.out.println(totalSum);
+        System.out.println(totalSumMenu);
     }
 }
