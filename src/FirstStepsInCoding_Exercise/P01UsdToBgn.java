@@ -8,6 +8,7 @@ public class P01UsdToBgn {
 
         double usd = Double.parseDouble(scanner.nextLine());
         double bgn = usd * 1.79549;
+
         System.out.println(bgn);
 
     }
