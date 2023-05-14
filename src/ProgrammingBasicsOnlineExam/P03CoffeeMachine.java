@@ -11,5 +11,6 @@ public class P03CoffeeMachine {
         int n = Integer.parseInt(scanner.nextLine());
 
 
+
     }
 }
