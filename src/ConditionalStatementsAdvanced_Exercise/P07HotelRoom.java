@@ -6,69 +6,62 @@ public class P07HotelRoom {
     public static void main(String[] args) {
         Scanner scanner = new Scanner((System.in));
 
-
         String month = scanner.nextLine();
-        int night = Integer.parseInt(scanner.nextLine());
+        int countNights = Integer.parseInt(scanner.nextLine());
 
-        String studioOrApartment = " ";
-        double priceStudio = 0.00;
-        double priceApartment = 0.00;
-        double oneNightPrice = 0.00;
+        double priceForApartment = 0;
+        double priceForStudio = 0;
 
-        if (month.equals("May") || month.equals("October")) {
-            if (night > 14) {
-                studioOrApartment = "Studio";
-                oneNightPrice = 50.00 - (50.00 * 0.30);
-                priceStudio = night * oneNightPrice;
+        //правим switch за месеците
 
-                studioOrApartment = "Apartment";
-                oneNightPrice = 65.00 - (65.00 * 0.10);
-                priceApartment = night * oneNightPrice;
-            }
-        } else {
-            studioOrApartment = "Studio";
-            oneNightPrice = 50.00 - (50.00 * 0.10);
-            priceStudio = night * oneNightPrice;
+        //– May, June, July, August, September или October
 
-            studioOrApartment = "Apartment";
-            oneNightPrice = 65.00 - (65.00 * 0.10);
-            priceApartment = night * oneNightPrice;
+        switch (month){
+            case "May":
+            case "October":
+                //пресмятаме цената за общия брой нощувки
+                priceForApartment = countNights * 65;
+                priceForStudio = countNights * 50;
+
+                //проверяваме дали имаме отстъпка при повече от 7, 14 нощувки
+                if(countNights > 14){
+                    priceForStudio = priceForStudio * 0.7;
+                    priceForApartment = priceForApartment * 0.9;
+                } else if (countNights > 7) {
+                    priceForStudio = priceForStudio * 0.95;
+                }
+                break;
+
+            case "June":
+            case "September":
+
+                priceForApartment = countNights * 68.70;
+                priceForStudio = countNights * 75.20;
+
+                if(countNights > 14){
+
+                    priceForApartment = priceForApartment * 0.9;
+                    priceForStudio = priceForStudio * 0.8;
+
+                }
+                break;
+
+            case "July":
+            case "August":
+                priceForApartment = countNights * 77;
+                priceForStudio = countNights * 76;
+
+                if(countNights > 14){
+                    priceForApartment = priceForApartment * 0.9;
+                }
+
+                break;
         }
 
-        if (month.equals("June") || month.equals("September")) {
-            if (night > 14) {
-                studioOrApartment = "Studio";
-                oneNightPrice = 75.20 - (75.20 * 0.20);
-                priceStudio = night * oneNightPrice;
+        System.out.printf("Apartment: %.2f lv.%n", priceForApartment);
+        System.out.printf("Studio: %.2f lv.", priceForStudio);
 
-                studioOrApartment = "Apartment";
-                oneNightPrice = 68.70 - (68.70 * 0.10);
-                priceApartment = night * oneNightPrice;
-            }else {
-                studioOrApartment = "Studio";
-                priceStudio = night * 75.20;
 
-                studioOrApartment = "Apartment";
-                priceApartment = night * 68.70;
-            }
-
-        }
-        if (month.equals("July") || month.equals("August")) {
-            studioOrApartment = "Studio";
-            priceStudio = night * 76.00;
-
-            studioOrApartment = "Apartment";
-            if (night > 14) {
-                oneNightPrice = 77.00 - (77.00 * 0.10);
-                priceApartment = night * oneNightPrice;
-            }else{
-                priceApartment = night * 77.00;
-            }
-        }
-        System.out.printf("Apartment: %.2f lv.%n", priceApartment);
-        System.out.printf("Studio: %.2f lv.", priceStudio);
     }
 }
-
-
 
