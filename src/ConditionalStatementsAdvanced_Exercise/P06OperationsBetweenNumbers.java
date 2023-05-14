@@ -6,53 +6,59 @@ public class P06OperationsBetweenNumbers {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        double num1 = Double.parseDouble(scanner.nextLine());
+        int num1 = Integer.parseInt(scanner.nextLine());
         int num2 = Integer.parseInt(scanner.nextLine());
         String symbol = scanner.nextLine();
 
+        double sum = 0;
         String result = " ";
-        double result2 = 0.00;
 
-        if (num1 == 0 || num2 == 0) {
-            System.out.printf("Cannot divide %.0f by zero", num1);
-        }
+        switch (symbol) {
+            case "+":
+                sum = num1 + num2;
+                if (sum % 2 == 0) {
+                    result = "even";
+                } else {
+                    result = "odd";
+                }
+                System.out.printf("%d %s %d = %.0f - %s", num1, symbol, num2, sum, result);
+                break;
 
-        if (symbol.equals("+")) {
-            result2 = num1 + num2;
-            if (result2 % 2 == 0) {
-                result = "even";
-            } else {
-                result = "odd";
-            }
-            System.out.printf("%.0f %s %d = %.0f - %s", num1, symbol, num2, result2, result);
-        } else if (symbol.equals("-")) {
-            result2 = num1 - num2;
-            if (result2 % 2 == 0) {
-                result = "even";
-            } else {
-                result = "odd";
-            }
-            System.out.printf("%.0f %s %d = %.0f - %s", num1, symbol, num2, result2, result);
-        } else if (symbol.equals("*")) {
-            result2 = num1 * num2;
+            case "-":
+                sum = num1 - num2;
+                if (sum % 2 == 0) {
+                    result = "even";
+                } else {
+                    result = "odd";
+                }
+                System.out.printf("%d %s %d = %.0f - %s", num1, symbol, num2, sum, result);
+                break;
 
-            if (result2 % 2 == 0) {
-                result = "even";
-            } else {
-                result = "odd";
-            }
-            System.out.printf("%.0f %s %d = %.0f - %s", num1, symbol, num2, result2, result);
+            case "*":
+                sum = num1 * num2;
 
-        } else if (symbol.equals("/")) {
-            result2 = num1 / num2;
-
-            System.out.printf("%.0f / %d = %.2f", num1, num2, result2);
-
-        } else if (symbol.equals("%")) {
-            result2 = num1 % num2;
-            System.out.printf("%.0f %s %d = %.0f", num1, symbol, num2, result2);
+                if (sum % 2 == 0) {
+                    result = "even";
+                } else {
+                    result = "odd";
+                }
+                System.out.printf("%d %s %d = %.0f - %s", num1, symbol, num2, sum, result);
+                break;
+            case "/":
+                if (num2 == 0) {
+                    System.out.printf("Cannot divide %d by zero", num1);
+                } else {
+                    double sum0 = num1*1.0 / num2;
+                    System.out.printf("%d %s %d = %.2f", num1, symbol, num2, sum0);
+                }
+                break;
+            case "%":
+                if (num2 == 0) {
+                    System.out.printf("Cannot divide %d by zero", num1);
+                } else {
+                    double sum0 = num1 % num2;
+                    System.out.printf("%d %s %d = %.0f", num1, symbol, num2, sum0);
+                }
         }
     }
 }
-
-
