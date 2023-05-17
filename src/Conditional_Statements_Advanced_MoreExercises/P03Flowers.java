@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class P03Flowers {
     public static void main(String[] args) {
-        Scanner  scanner = new Scanner (System.in);
+        Scanner scanner = new Scanner(System.in);
 
         int chrysanthemumsCount = Integer.parseInt(scanner.nextLine());
         int rosesCount = Integer.parseInt(scanner.nextLine());
@@ -12,62 +12,57 @@ public class P03Flowers {
         String season = scanner.nextLine();
         String day = scanner.nextLine();
 
-        double chrysanthemumsPrice = 0.00;
-        double rosesPrice = 0.00;
-        double tulipsPrice = 0.00;
-        int totalFlowers = chrysanthemumsCount + rosesCount + tulipsCount;
+        double chrysanthemumsPrice = chrysanthemumsCount * 2.00;
+        double rosesPrice = rosesCount * 4.10;
+        double tulipsPrice  = tulipsCount * 2.50;
 
-        double totalSum = 0.00;
-        switch (season){
-            case "Spring" :
-            case "Summer":
-                switch (day){
-                    case "Y":
-                        chrysanthemumsPrice = chrysanthemumsCount * 2.00;
-                        rosesPrice = rosesCount * 4.10;
-                        tulipsPrice = tulipsCount * 2.50;
+        int flowers = chrysanthemumsCount + rosesCount + tulipsCount;
+        double sum = chrysanthemumsPrice + rosesPrice + tulipsPrice;
 
-                        double sum = chrysanthemumsPrice + rosesPrice + tulipsPrice ;
 
-                        totalSum = sum - (sum * 0.15);
+           switch (season){
+               case "Spring":
+                   switch (day){
+                       case "Y":
+                           chrysanthemumsPrice = chrysanthemumsPrice + (chrysanthemumsPrice * 0.15);
+                           rosesPrice = rosesPrice + (rosesPrice * 0.15);
+                           tulipsPrice = tulipsPrice + (tulipsPrice * 0.15);
 
-                        if (tulipsCount > 7) {
-                            totalSum = sum - (sum * 0.05);
-                        }
+                           if (tulipsCount  > 7){
+                               sum = sum - (sum * 0.05);
 
-                        if (totalFlowers > 20){
-                            totalSum = totalSum * 0.80;
-                        }
+                           }else if (flowers > 20){
+                               sum = sum - (sum * 0.20);
+                           }
+                           break;
+                       case "N":
 
-                        double totalSumPrice = totalSum + 2.00;
+                            chrysanthemumsPrice = chrysanthemumsCount * 2.00;
+                           rosesPrice = rosesCount * 4.10;
+                           tulipsPrice  = tulipsCount * 2.50;
 
-                        System.out.printf("%.2f" , totalSumPrice);
-                        break;
-                    case "N" :
-                        chrysanthemumsPrice = chrysanthemumsCount * 2.00;
-                        rosesPrice = rosesCount * 4.10;
-                        tulipsPrice = tulipsCount * 2.50;
-                        double sum1 = chrysanthemumsPrice + rosesPrice + tulipsPrice ;
+                           if (flowers > 20){
+                               sum = sum - (sum * 0.20);
+                           }
+                           break;
+                   }
+                   break;
+               case "Summer" :
+                   break;
+               case "Autumn":
+                   break;
+               case "":
+                   break;
 
-                        if (tulipsCount > 7){
-                            sum1 = sum1 * 0.95;
-                        }else if (rosesCount >= 10){
-                            sum1 = sum1 * 0.90;
-                        }
+}
 
-                        if (totalFlowers > 20){
-                            sum1 = sum1 * 0.80;
-                        }
-                        double totalSumPriceN = chrysanthemumsPrice + rosesPrice + tulipsPrice;
-                        System.out.printf("%.2f",totalSumPriceN);
 
-                        break;
-                }
-                break;
-            case "Autumn":
-            case "Winter" :
 
-                break;
-        }
+
+
+
+
+
     }
 }
+
