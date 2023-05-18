@@ -14,9 +14,9 @@ public class P02CatWalking {
         double minutesTotal = walking * walkingMinutesDay;
         double caloriesDay = minutesTotal * 5;
 
-        double totalCaloriesOneDay =Math.abs(caloriesOneDay - (caloriesOneDay * 0.50));
+        double totalCaloriesOneDay = caloriesOneDay - (caloriesOneDay * 0.50);
 
-        if (caloriesDay > totalCaloriesOneDay){
+        if (caloriesDay >= totalCaloriesOneDay){
             System.out.printf("Yes, the walk for your cat is enough. Burned calories per day: %.0f." , caloriesDay);
         }else {
             System.out.printf("No, the walk for your cat is not enough. Burned calories per day: %.0f." ,caloriesDay);
