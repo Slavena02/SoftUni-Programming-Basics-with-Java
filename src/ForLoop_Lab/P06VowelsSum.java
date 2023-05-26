@@ -8,25 +8,29 @@ public class P06VowelsSum {
 
         String text = scanner.nextLine();
 
-           int sum = 0;
+        int sum = 0;
+        for (int i = 0; i < text.length(); i++) {
+            char letter = text.charAt(i);
 
-        for (int index = 0; index <text.length() ; index++) {
-            char symbol = text.charAt(index);
-
-            switch (symbol){
+            switch (letter) {
                 case 'a':
-                    sum +=1;
+                    sum = sum + 1;
+                    break;
                 case 'e':
-                    sum +=2;
+                    sum = sum + 2;
+                    break;
                 case 'i':
-                    sum +=3;
+                    sum = sum + 3;
+                    break;
                 case 'o':
-                    sum += 4;
+                    sum = sum + 4;
+                    break;
                 case 'u':
-                    sum +=5;
+                    sum = sum + 5;
                     break;
             }
         }
+
         System.out.println(sum);
     }
 }
