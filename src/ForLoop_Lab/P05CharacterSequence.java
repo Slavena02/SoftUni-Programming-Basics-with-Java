@@ -8,7 +8,7 @@ public class P05CharacterSequence {
 
         String text = scanner.nextLine();
 
-        for (int position = 0; position <=text.length()-1; position++){
+        for (int position = 0; position <= text.length()-1; position++){
             System.out.println(text.charAt(position));
 
         }

@@ -14,19 +14,19 @@ public class P06VowelsSum {
 
             switch (letter) {
                 case 'a':
-                    sum = sum + 1;
+                    sum += 1;
                     break;
                 case 'e':
-                    sum = sum + 2;
+                    sum += 2;
                     break;
                 case 'i':
-                    sum = sum + 3;
+                    sum += 3;
                     break;
                 case 'o':
-                    sum = sum + 4;
+                    sum += 4;
                     break;
                 case 'u':
-                    sum = sum + 5;
+                    sum += 5;
                     break;
             }
         }
