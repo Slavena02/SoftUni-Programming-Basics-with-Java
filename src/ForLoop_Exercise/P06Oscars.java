@@ -9,9 +9,21 @@ public class P06Oscars {
         String nameActor = scanner.nextLine();;
         double pointsAcademy = Double.parseDouble(scanner.nextLine());
         int jury = Integer.parseInt(scanner.nextLine());
+        double sumPoints = pointsAcademy;
 
+        for (int i = 1; i <=jury ; i++) {
+            String name = scanner.nextLine();
+            double secondsPoints = Double.parseDouble(scanner.nextLine());
+            sumPoints += (name.length() * secondsPoints) / 2;
 
-        for (int i = 0; i < ; i++) {
+            if (sumPoints >= 1250.5) {
+                System.out.printf("Congratulations, %s got a nominee for leading role with %.1f!", nameActor, sumPoints);
+                break;
+            }
+        }
+         if (sumPoints < 1250.5){
+             double diff = Math.abs(sumPoints - 1250.5);
+             System.out.printf("Sorry, %s you need %.1f more!", nameActor, diff);
             
         }
     }
