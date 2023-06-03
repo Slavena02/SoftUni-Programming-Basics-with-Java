@@ -20,13 +20,17 @@ public class P08TennisRankList {
         for (int i = 1; i <= tournaments ; i++) {
             String stage = scanner.nextLine();
 
-            if (stage.equals("W")) {
-                sum += pointW;
-                wens++;
-            } else if (stage.equals("F")) {
-                sum += pointF;
-            } else if (stage.equals("SF")) {
-                sum += pointSF;
+            switch (stage) {
+                case "W":
+                    sum += pointW;
+                    wens++;
+                    break;
+                case "F":
+                    sum += pointF;
+                    break;
+                case "SF":
+                    sum += pointSF;
+                    break;
             }
         }
 
