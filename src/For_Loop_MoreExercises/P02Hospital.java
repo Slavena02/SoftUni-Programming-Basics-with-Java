@@ -13,14 +13,17 @@ public class P02Hospital {
         int untreatedPatients = 0;
 
         for (int i = 1; i <= period ; i++) {
+
             int patient = Integer.parseInt(scanner.nextLine());
 
-            if (doctors == patient){
-                treatedPatients += doctors;
-            }else{
-                untreatedPatients -= doctors ;
+                if (doctors >= patient){
+                    treatedPatients++;
+                }else{
+                    untreatedPatients++;
+                }
+
             }
 
         }
     }
-}
+

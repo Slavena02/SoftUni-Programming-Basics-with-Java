@@ -13,12 +13,12 @@ public class P01BackToThePast {
 
         for (int i = 1800; i <= years; i++) {
 
-            if (i % 2 == 0) {
-                budget -= 12000;
-            } else {
-                ++age;
+            if (i % 2 == 1) {
                 budget -= 12000 + age * 50;
+            } else {
+                budget -= 12000 ;
             }
+            age++;
         }
 
         if (budget > 0){
