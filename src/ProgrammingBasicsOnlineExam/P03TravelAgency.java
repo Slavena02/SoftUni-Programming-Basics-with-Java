@@ -11,15 +11,37 @@ public class P03TravelAgency {
         String vipDiscount = scanner.nextLine();
         int days = Integer.parseInt(scanner.nextLine());
 
-        double pricePerDay;
-
+        double pricePerDay = 0;
+        double totalSum = 0.00;
+        double discount = 0;
         switch (city) {
             case "Bansko":
             case "Borovets":
                 if (packageType.equals("noEquipment")) {
                     pricePerDay = 80;
+                    totalSum = pricePerDay * days;
+                    switch (vipDiscount) {
+                        case "yes":
+                            discount = 0.05;
+                            totalSum = pricePerDay * days;
+                            totalSum -= totalSum * discount;
+                            break;
+                        case "no":
+                            totalSum = pricePerDay * days;
+                            break;
+                    }
                 } else if (packageType.equals("withEquipment")) {
                     pricePerDay = 100;
+                    switch (vipDiscount) {
+                        case "yes":
+                            totalSum = pricePerDay * days;
+                            discount = 0.10;
+                            totalSum -= totalSum * discount;
+                            break;
+                        case "no":
+                            totalSum = pricePerDay * days;
+                            break;
+                    }
                 } else {
                     System.out.println("Invalid input!");
                     return;
@@ -29,11 +51,28 @@ public class P03TravelAgency {
             case "Burgas":
                 if (packageType.equals("noBreakfast")) {
                     pricePerDay = 100;
+                    switch (vipDiscount) {
+                        case "yes":
+                            totalSum = pricePerDay * days;
+                            discount = 0.07;
+                            totalSum -= totalSum * discount;
+                            break;
+                        case "no":
+                            totalSum = pricePerDay * days;
+                            break;
+                    }
                 } else if (packageType.equals("withBreakfast")) {
                     pricePerDay = 130;
-                } else {
-                    System.out.println("Invalid input!");
-                    return;
+                    switch (vipDiscount) {
+                        case "yes":
+                            totalSum = pricePerDay * days;
+                            discount = 0.12;
+                            totalSum -= totalSum * discount;
+                            break;
+                        case "no":
+                            totalSum = pricePerDay * days;
+                            break;
+                    }
                 }
                 break;
             default:
@@ -41,29 +80,14 @@ public class P03TravelAgency {
                 return;
         }
 
-        double totalPrice = pricePerDay * days;
-
         if (days > 7) {
-            totalPrice -= pricePerDay;
-        }
-
-        if (vipDiscount.equals("yes")) {
-            double discount = 0;
-            if (city.equals("Bansko") || city.equals("Borovets")) {
-                discount = 0.1;
-            } else if (city.equals("Varna") || city.equals("Burgas")) {
-                discount = 0.12;
-            }
-            totalPrice -= totalPrice * discount;
-        } else if (!vipDiscount.equals("no")) {
-            System.out.println("Invalid input!");
-            return;
+            totalSum -= pricePerDay;
         }
 
         if (days < 1) {
             System.out.println("Days must be positive number!");
         } else {
-            System.out.printf("The price is %.2f lv! Have a nice time!", totalPrice);
+            System.out.printf("The price is %.2flv! Have a nice time!", totalSum);
         }
     }
 }
