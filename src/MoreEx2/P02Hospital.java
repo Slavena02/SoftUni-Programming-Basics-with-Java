@@ -7,5 +7,6 @@ public class P02Hospital {
         Scanner scanner = new Scanner(System.in);
 
 
+
     }
 }
