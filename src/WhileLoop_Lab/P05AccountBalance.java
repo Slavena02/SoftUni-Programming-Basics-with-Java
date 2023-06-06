@@ -8,18 +8,18 @@ public class P05AccountBalance {
 
         String input = scanner.nextLine();
 
-
         double money = 0;
         while (!input.equals("NoMoreMoney")) {
-
-            System.out.println(input);
             double output = Double.parseDouble(input);
-            money += output;
             if (output <= 0) {
                 System.out.println("Invalid operation!");
+            } else {
+                System.out.printf("%.2f%n", output);
+                money += output;
             }
-            input = scanner.nextLine();
+                input = scanner.nextLine();
+
         }
-        System.out.printf("Total: %.2f",money);
+            System.out.printf("Total: %.2f", money);
+        }
     }
-}
