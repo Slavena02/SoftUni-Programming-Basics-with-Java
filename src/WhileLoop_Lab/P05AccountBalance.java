@@ -6,32 +6,18 @@ public class P05AccountBalance {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-                double totalAmount = 0;
+              String input = scanner.nextLine();
 
-                while (true) {
-                    String input = scanner.nextLine();
+              double money = 0;
+              while (!input.equals("NoMoreMoney")){
+                  double output = Double.parseDouble(scanner.nextLine());
 
-                    if (input.equals("NoMoreMoney")) {
-                        break;
-                    }
+                  money += output;
 
-                    double amount;
-                    try {
-                        amount = Double.parseDouble(input);
-                    } catch (NumberFormatException e) {
-                        System.out.println("Invalid operation!");
-                        return;
-                    }
+                  if (output == 0){
 
-                    if (amount < 0) {
-                        System.out.println("Invalid operation!");
-                        return;
-                    }
+                  }
 
-                    System.out.printf("Increase: %.2f%n", amount);
-                    totalAmount += amount;
-                }
-
-                System.out.printf("Total: %.2f%n", totalAmount);
+              }
             }
         }
