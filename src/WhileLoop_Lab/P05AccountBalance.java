@@ -13,12 +13,11 @@ public class P05AccountBalance {
             double output = Double.parseDouble(input);
             if (output <= 0) {
                 System.out.println("Invalid operation!");
-            } else {
-                System.out.printf("%.2f%n", output);
-                money += output;
+                break;
             }
+                System.out.printf("Increase: %.2f%n", output);
+                money += output;
                 input = scanner.nextLine();
-
         }
             System.out.printf("Total: %.2f", money);
         }
