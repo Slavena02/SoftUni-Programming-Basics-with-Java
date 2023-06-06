@@ -8,13 +8,14 @@ public class P06MaxNumber {
         String input = scanner.nextLine();
         int maxNum = Integer.MIN_VALUE;
 
-        while (!input.equals("Stop")){
-            int num = Integer.parseInt(scanner.nextLine());
+        while (!input.equals("Stop")) {
+            int num = Integer.parseInt(input);
 
+            if (num > maxNum) {
+                maxNum = num;
+            }
             input = scanner.nextLine();
-            System.out.println(input);
-
-
         }
+            System.out.println(maxNum);
     }
 }
