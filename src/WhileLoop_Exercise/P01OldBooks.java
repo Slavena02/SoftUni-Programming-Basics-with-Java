@@ -12,10 +12,6 @@ public class P01OldBooks {
         int books = 0;
         while (!book.equals("No More Books")){
 
-            System.out.println("The book you search is not here!");
-            System.out.printf("You checked {брой} books.");
-            book = scanner.nextLine();
-
         }
     }
 }
