@@ -14,11 +14,12 @@ public class P01OldBooks {
 
         String input = scanner.nextLine();
         while (!input.equals("No More Books")) {
-            booksChecked++;
             if (input.equals(book)) {
                 isFound = true;
+
                 break;
             }
+            booksChecked++;
             input = scanner.nextLine();
         }
 
