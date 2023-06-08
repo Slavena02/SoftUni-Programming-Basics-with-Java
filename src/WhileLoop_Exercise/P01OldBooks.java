@@ -9,6 +9,7 @@ public class P01OldBooks {
 
         int books = 0;
         boolean isFound = false;
+
         String input = scanner.nextLine();
         while (!book.equals("No More Books")) {
             if (input.equals(book)){
