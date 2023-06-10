@@ -6,61 +6,42 @@ public class P03Flowers {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        int chrysanthemumsCount = Integer.parseInt(scanner.nextLine());
-        int rosesCount = Integer.parseInt(scanner.nextLine());
-        int tulipsCount = Integer.parseInt(scanner.nextLine());
+        int countChrysanthemums = Integer.parseInt(scanner.nextLine());
+        int countRoses = Integer.parseInt(scanner.nextLine());
+        int countTulips= Integer.parseInt(scanner.nextLine());
         String season = scanner.nextLine();
-        String day = scanner.nextLine();
+        String yOrN = scanner.nextLine();
 
-        double chrysanthemumsPrice = chrysanthemumsCount * 2.00;
-        double rosesPrice = rosesCount * 4.10;
-        double tulipsPrice  = tulipsCount * 2.50;
+        double priceChrysanthemums = 0.00;
+        double priceRoses = 0.00;
+        double priceTulips = 0.00;
+        switch (season){
+            case "Spring":
+            case "Summer":
+                priceChrysanthemums = 2.00 * countChrysanthemums;
+                priceRoses = 4.10 * countRoses;
+                priceTulips = 2.50 * countTulips;
+                switch (yOrN){
+                    case "Y":
+                        break;
+                    case "N":
+                        break;
+                }
+                break;
+            case "Аutumn":
+            case "Winter":
+                priceChrysanthemums = 3.75 * countChrysanthemums;
+                priceRoses = 4.50 * priceRoses;
+                priceTulips = 4.15 * priceTulips;
+                switch (yOrN){
+                    case "Y":
+                        break;
+                    case "N":
+                        break;
+                }
+                break;
 
-        int flowers = chrysanthemumsCount + rosesCount + tulipsCount;
-        double sum = chrysanthemumsPrice + rosesPrice + tulipsPrice;
-
-
-           switch (season){
-               case "Spring":
-                   switch (day){
-                       case "Y":
-                           chrysanthemumsPrice = chrysanthemumsPrice + (chrysanthemumsPrice * 0.15);
-                           rosesPrice = rosesPrice + (rosesPrice * 0.15);
-                           tulipsPrice = tulipsPrice + (tulipsPrice * 0.15);
-
-                           if (tulipsCount  > 7){
-                               sum = sum - (sum * 0.05);
-
-                           }else if (flowers > 20){
-                               sum = sum - (sum * 0.20);
-                           }
-                           break;
-                       case "N":
-
-                            chrysanthemumsPrice = chrysanthemumsCount * 2.00;
-                           rosesPrice = rosesCount * 4.10;
-                           tulipsPrice  = tulipsCount * 2.50;
-
-                           if (flowers > 20){
-                               sum = sum - (sum * 0.20);
-                           }
-                           break;
-                   }
-                   break;
-               case "Summer" :
-                   break;
-               case "Autumn":
-                   break;
-               case "":
-                   break;
-
-}
-
-
-
-
-
-
+        }
 
 
     }
