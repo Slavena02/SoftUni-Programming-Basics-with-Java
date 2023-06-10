@@ -56,7 +56,7 @@ public class P03MovieDestination {
         if (destination.equals("Dubai")) {
             totalSum = totalSum - (totalSum * 0.30);
         } else if (destination.equals("Sofia")) {
-            totalSum = totalSum + (totalSum * 0.15);
+            totalSum = totalSum + (totalSum * 0.25);
         }
 
         if (budget >= totalSum) {
