@@ -9,43 +9,39 @@ public class P05Vacation {
         double budget = Double.parseDouble(scanner.nextLine());
         String season = scanner.nextLine();
 
-        double alaska  = 0.00;
-        double morocco = 0.00;
+        String location = "";
+        String accommodation = "";
+        double price = 0.0;
 
-        if (budget < 1000){
-            switch (season){
-                case "Summer":
-                    alaska = budget * 0.65;
-                    System.out.printf("Alaska - Camp - %.2f" , alaska);
-                    break;
-                case "Winter":
-                    morocco = budget * 0.45;
-                    System.out.printf("Morocco - Camp - %.2f" , morocco);
-                    break;
+        if (budget <= 1000) {
+            accommodation = "Camp";
+            if (season.equals("Summer")) {
+                location = "Alaska";
+                price = budget * 0.65;
+            } else if (season.equals("Winter")) {
+                location = "Morocco";
+                price = budget * 0.45;
             }
-        }else if (budget < 3000){
-            switch (season){
-                case "Summer":
-                    alaska = budget * 0.80;
-                    System.out.printf("Alaska - Hut - %.2f" , alaska);
-                    break;
-                case "Winter":
-                    morocco = budget * 0.60;
-                    System.out.printf("Morocco - Hut - %.2f" , morocco);
-                    break;
+        } else if (budget <= 3000) {
+            accommodation = "Hut";
+            if (season.equals("Summer")) {
+                location = "Alaska";
+                price = budget * 0.8;
+            } else if (season.equals("Winter")) {
+                location = "Morocco";
+                price = budget * 0.6;
             }
-        }else {
-            switch (season){
-                case "Summer":
-                    alaska = budget * 0.90;
-                    System.out.printf("Alaska - Hotel - %.2f" , alaska);
-                    break;
-                case "Winter":
-                    morocco = budget * 0.90;
-                    System.out.printf("Morocco - Hotel - %.2f" , morocco);
-                    break;
+        } else {
+            accommodation = "Hotel";
+            if (season.equals("Summer")){
+                location = "Alaska";
+                price = budget * 0.9;
+            } else if (season.equals("Winter")) {
+                location = "Morocco";
+                price = budget * 0.9;
             }
-
         }
+
+        System.out.printf("%s - %s - %.2f", location, accommodation, price);
     }
 }
