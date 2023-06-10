@@ -12,7 +12,6 @@ public class P03FilmPremiere {
 
         double ticketsPrice = 0.00;
         double totalSum = 0.00;
-        double discount = 0.00;
 
         switch (projection) {
             case "John Wick":
@@ -44,11 +43,11 @@ public class P03FilmPremiere {
                     case "Menu":
                         ticketsPrice = 30.00;
                         totalSum = countTickets * ticketsPrice;
+                        break;
+                }
 
-                        if (countTickets >= 4) {
-                            discount = totalSum - (totalSum * 0.30);
-                            totalSum = totalSum - discount;
-                        }
+                if (countTickets >= 4) {
+                    totalSum = totalSum - (totalSum * 0.30);
                 }
                 break;
             case "Jumanji":
@@ -64,13 +63,15 @@ public class P03FilmPremiere {
                     case "Menu":
                         ticketsPrice = 14.00;
                         totalSum = countTickets * ticketsPrice;
-                        if (countTickets == 2) {
-                            discount = totalSum - (totalSum * 0.15);
-                            totalSum = totalSum - discount;
-                        }
+                        break;
+                }
+                if (countTickets == 2) {
+                    totalSum = totalSum - (totalSum * 0.15);
                 }
                 break;
         }
+
+
         System.out.printf("Your bill is %.2f leva." , totalSum);
 
     }
