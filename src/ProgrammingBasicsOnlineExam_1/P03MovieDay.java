@@ -7,5 +7,6 @@ public class P03MovieDay {
         Scanner scanner = new Scanner (System.in);
 
 
+
     }
 }
