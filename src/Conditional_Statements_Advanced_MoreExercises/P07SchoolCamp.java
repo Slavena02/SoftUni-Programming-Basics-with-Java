@@ -18,7 +18,9 @@ public class P07SchoolCamp {
             case "Winter":
                 switch (groupType) {
                     case "boys":
+                        oneNightPrice = 9.60;
                         sport = "Judo";
+                        break;
                     case "girls":
                         oneNightPrice = 9.60;
                         sport = "Gymnastics";
@@ -32,7 +34,9 @@ public class P07SchoolCamp {
             case "Spring":
                 switch (groupType) {
                     case "boys":
+                        oneNightPrice = 7.20;
                         sport = "Tennis";
+                        break;
                     case "girls":
                         oneNightPrice = 7.20;
                         sport = "Athletics";
@@ -46,7 +50,9 @@ public class P07SchoolCamp {
             case "Summer":
                 switch (groupType) {
                     case "boys":
+                        oneNightPrice = 15.00;
                         sport = "Football";
+                        break;
                     case "girls":
                         oneNightPrice = 15.00;
                         sport = "Volleyball";
@@ -58,7 +64,7 @@ public class P07SchoolCamp {
                 }
                 break;
         }
-        double totalSum = countNight * oneNightPrice;
+        double totalSum = countNight * oneNightPrice * students;
 
         if (students >= 50){
             totalSum = totalSum - (totalSum * 0.50);
