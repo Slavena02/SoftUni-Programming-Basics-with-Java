@@ -10,7 +10,7 @@ public class P06TruckDriver {
         double kilometersOneMonth = Double.parseDouble(scanner.nextLine());
 
         double sumOneKilometers = 0.00;
-        double totalSum = 0.00;
+        int month = 4;
         switch (season){
             case "Autumn":
             case "Spring":
@@ -41,5 +41,8 @@ public class P06TruckDriver {
                 }
                 break;
         }
+        double totalSum = kilometersOneMonth * sumOneKilometers * month;
+        totalSum = totalSum - (totalSum * 0.10);
+        System.out.printf("%.2f" ,totalSum );
     }
 }
