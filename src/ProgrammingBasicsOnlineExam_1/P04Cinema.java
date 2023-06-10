@@ -6,5 +6,7 @@ public class P04Cinema {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+        int countPeople = Integer.parseInt(scanner.nextLine());
+
     }
 }
