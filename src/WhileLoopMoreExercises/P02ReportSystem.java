@@ -35,18 +35,19 @@ public class P02ReportSystem {
                 }
                 transaction++;
             }
-        }
 
 
-        double averagesCard =  sumCard / transaction;
-        double averagesMoney =  sumMoney / transaction;
+            double averagesCard = sumCard / transaction;
+            double averagesMoney = sumMoney / transaction;
 
 
-            if (sumMoney >= budget){
-                System.out.printf("Average CS: %.2f");
-                System.out.printf("");
+            if (sumMoney >= budget) {
+                System.out.printf("Average CS: %.2f", averagesMoney);
+                System.out.printf("Average CC: %.2f", averagesCard);
             }
 
 
         }
+        System.out.println("Failed to collect required money for charity.");
     }
+}
