@@ -12,18 +12,25 @@ public class P02Hospital {
         int treatedPatients = 0;
         int untreatedPatients = 0;
 
-        for (int i = 1; i <= period ; i++) {
+        for (int day = 1; day <= period; day++) {
+            int patients = Integer.parseInt(scanner.nextLine());
 
-            int patient = Integer.parseInt(scanner.nextLine());
-
-                if (doctors >= patient){
-                    treatedPatients++;
-                }else{
-                    untreatedPatients++;
-                }
-
+            if (day % 3 == 0){
+                doctors++;
+            }
+            if (doctors >= patients) {
+                treatedPatients += patients ;
+            }else {
+                treatedPatients += doctors;
+                untreatedPatients += patients - doctors;
             }
 
         }
+            System.out.println("Treated patients: " + treatedPatients + ".");
+            System.out.println("Untreated patients: " + untreatedPatients + ".");
+
+
+
     }
+}
 
