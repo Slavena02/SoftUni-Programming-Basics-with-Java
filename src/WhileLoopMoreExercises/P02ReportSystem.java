@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class P02ReportSystem {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
         int budget = Integer.parseInt(scanner.nextLine());
 
         int transaction = 0;
@@ -42,15 +41,21 @@ public class P02ReportSystem {
                     System.out.println("Product sold!");
                 }
             }
-            if (totalSum >= budget) {
-                double averagesCard = sumCard / card;
-                double averagesMoney = sumMoney / cash;
-                System.out.printf("Average CS: %.2f%n", averagesMoney);
-                System.out.printf("Average CC: %.2f%n", averagesCard);
-            }
-            input = scanner.nextLine();
 
+            if (totalSum >= budget) {
+                break;
+            }
+
+            input = scanner.nextLine();
         }
-        System.out.println("Failed to collect required money for charity.");
+
+        if (totalSum >= budget) {
+            double averagesCard = sumCard / card;
+            double averagesMoney = sumMoney / cash;
+            System.out.printf("Average CS: %.2f%n", averagesMoney);
+            System.out.printf("Average CC: %.2f%n", averagesCard);
+        } else {
+            System.out.println("Failed to collect required money for charity.");
+        }
     }
 }
