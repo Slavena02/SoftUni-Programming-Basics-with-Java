@@ -41,7 +41,7 @@ public class P05GameOfIntervals {
             }
 
         }
-        System.out.printf("%.2f",sumPoint);
+        System.out.printf("%.2f%n",sumPoint);
         System.out.printf("From 0 to 9: %.2f%%%n" ,num0or9 / move * 100);
         System.out.printf("From 10 to 19: %.2f%%%n" , num10or19 / move * 100);
         System.out.printf("From 20 to 29: %.2f%%%n" , num20or29 / move * 100);
