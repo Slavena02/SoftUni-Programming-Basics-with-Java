@@ -13,7 +13,12 @@ public class P08PointOnRectangleBorder {
         int x = Integer.parseInt(scanner.nextLine());
         int y = Integer.parseInt(scanner.nextLine());
 
-
-
+        if (x >= x1 && x <= x2 && (y == y1 || y == y2)) {
+            System.out.println("Border");
+        } else if (y >= y1 && y <= y2 && (x == x1 || x == x2)) {
+            System.out.println("Border");
+        } else {
+            System.out.println("Inside / Outside");
+        }
     }
 }
