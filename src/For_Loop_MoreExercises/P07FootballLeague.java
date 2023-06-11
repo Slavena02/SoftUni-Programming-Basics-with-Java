@@ -15,20 +15,20 @@ public class P07FootballLeague {
         double fansG = 0;
         for (int i = 1; i <= fans; i++) {
             String sector = scanner.nextLine();
-            switch (sector){
+            switch (sector) {
                 case "A":
                     fansA++;
-                    break;
+                    continue;
                 case "B":
                     fansB++;
-                    break;
+                    continue;
                 case "V":
                     fansV++;
-                    break;
+                    continue;
                 case "G":
                     fansG++;
-                    break;
             }
+        }
             double fansAPercent = fansA / fans  * 100;
             double fansBPercent = fansB / fans  * 100;
             double fansVPercent = fansV / fans  * 100;
@@ -40,7 +40,7 @@ public class P07FootballLeague {
             System.out.printf("%.2f%%%n",fansVPercent);
             System.out.printf("%.2f%%%n",fansGPercent);
             System.out.printf("%.2f%%%n" ,sectorPercent);
-        }
+
     }
 }
 
