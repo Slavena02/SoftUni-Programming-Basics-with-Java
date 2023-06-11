@@ -48,7 +48,7 @@ public class P02ReportSystem {
                 System.out.printf("Average CS: %.2f%n", averagesMoney);
                 System.out.printf("Average CC: %.2f%n", averagesCard);
             }
-                input = scanner.nextLine();
+            input = scanner.nextLine();
 
         }
         System.out.println("Failed to collect required money for charity.");
