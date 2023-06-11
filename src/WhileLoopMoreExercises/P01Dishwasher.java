@@ -5,38 +5,39 @@ import java.util.Scanner;
 public class P01Dishwasher {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        int bottlesCount = Integer.parseInt(scanner.nextLine());
 
+        int platesCount = 0;
+        int potsCount = 0;
+        int detergentNeeded = 0;
+        int newPreparation = bottlesCount * 750;
+        int period = 0;
 
         String input = scanner.nextLine();
-
-        int newPreparation = 750;
-        int preparationMl = 0;
-        int plates = 0;
-        int countPlates = 0;
-        int pots = 0;
-        int countPots = 0;
-        int period = 0;
         while (!input.equals("End")) {
-            int sumPreparation = Integer.parseInt(input);
-            newPreparation = sumPreparation * newPreparation;
-            int utensils = Integer.parseInt(scanner.nextLine());
+            int itemsCount = Integer.parseInt(input);
             period++;
             if (period % 3 == 0) {
-                pots = utensils * 15;
-                preparationMl += pots;
-                countPots += utensils;
+                potsCount += itemsCount;
+                detergentNeeded += itemsCount * 15;
+
             } else {
-                plates = utensils * 5;
-                preparationMl += plates;
-                countPlates += utensils;
+                platesCount += itemsCount;
+                detergentNeeded += itemsCount * 5;
+
             }
 
-            if (preparationMl > newPreparation) {
-                System.out.printf("Not enough detergent, %d ml. more necessary!", preparationMl - newPreparation);
+            if (detergentNeeded > newPreparation) {
+                System.out.printf("Not enough detergent, %d ml. more necessary!%n", detergentNeeded - bottlesCount * 750);
+                return;
             }
+
+            input = scanner.nextLine();
         }
+
+        int leftoverDetergent = newPreparation - detergentNeeded;
         System.out.println("Detergent was enough!");
-        System.out.printf("%d dishes and %d pots were washed.", countPlates, countPots);
-        System.out.printf("Leftover detergent %d ml.", newPreparation - preparationMl);
+        System.out.printf("%d dishes and %d pots were washed.%n", platesCount, potsCount);
+        System.out.printf("Leftover detergent %d ml.", leftoverDetergent);
     }
 }
