@@ -8,12 +8,12 @@ public class P05GameOfIntervals {
 
         int move = Integer.parseInt(scanner.nextLine());
 
-        int invalidNum = 0;
-        int num0or9 = 0;
-        int num10or19 = 0;
-        int num20or29 = 0;
-        int num30or39 = 0;
-        int num40or50 = 0;
+        double invalidNum = 0;
+        double num0or9 = 0;
+        double num10or19 = 0;
+        double num20or29 = 0;
+        double num30or39 = 0;
+        double num40or50 = 0;
         double sumPoint = 0;
 
 
@@ -41,5 +41,12 @@ public class P05GameOfIntervals {
             }
 
         }
+        System.out.printf("%.2f",sumPoint);
+        System.out.printf("From 0 to 9: %.2f%%%n" ,num0or9 / move * 100);
+        System.out.printf("From 10 to 19: %.2f%%%n" , num10or19 / move * 100);
+        System.out.printf("From 20 to 29: %.2f%%%n" , num20or29 / move * 100);
+        System.out.printf("From 30 to 39: %.2f%%%n" , num30or39 / move * 100);
+        System.out.printf("From 40 to 50: %.2f%%%n" , num40or50 / move * 100);
+        System.out.printf("Invalid numbers: %.2f%%%n", invalidNum  / move * 100);
     }
 }
