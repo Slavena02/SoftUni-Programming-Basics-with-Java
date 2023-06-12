@@ -11,37 +11,39 @@ public class P05Series {
 
 
         double sum = 0.00;
-
+        String input = scanner.nextLine();
         for (int i = 1; i <=countSerial ; i++) {
-            String input = scanner.nextLine();
             double price = Double.parseDouble(scanner.nextLine());
             switch (input){
-                case "Thrones ":
+                case "Thrones":
                     price -= price * 0.50;
                     sum += price;
                     break;
-                case "Lucifer ":
+                case "Lucifer":
                     price -= price * 0.40;
                     sum += price;
                     break;
-                case "Protector ":
+                case "Protector":
                     price -= price * 0.30;
                     sum += price;
                     break;
-                case "TotalDrama ":
+                case "TotalDrama":
                     price -= price * 0.20;
                     sum += price;
                     break;
-                case "Area ":
+                case "Area":
                     price -= price * 0.10;
                     sum += price;
                     break;
             }
-            budget -= sum;
+            budget -= price;
+            sum += price;
             if (budget < sum){
                 break;
             }
             input = scanner.nextLine();
+
+
         }
         if (budget >= sum){
             System.out.printf("You bought all the series and left with %.2f lv." , budget - sum);
