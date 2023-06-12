@@ -5,31 +5,36 @@ import java.util.Scanner;
 public class P04Cinema {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
-        int n = Integer.parseInt(scanner.nextLine());
-
-        double totalSum = 0.00;
-        double priceTickets = 5.00;
-        int countPeople = 0;
-        double sum = 0.00;
+        int capacity = Integer.parseInt(scanner.nextLine());
         String input = scanner.nextLine();
+        int totalIncome = 0;
+        int seatsTaken = 0;
 
         while (!input.equals("Movie time!")) {
             int people = Integer.parseInt(input);
-            countPeople += people;
-            sum = people * priceTickets;
-            if (people % 3 == 0) {
-                sum = sum - 5.00;
-            }
-            totalSum += sum;
 
-            if (people > n) {
-                System.out.println("The cinema is full.");
+            if (seatsTaken + people > capacity) {
                 break;
             }
+
+            seatsTaken += people;
+            int income = people * 5;
+
+            if (people % 3 == 0) {
+                income -= 5;
+            }
+
+            totalIncome += income;
+
             input = scanner.nextLine();
         }
-        System.out.printf("There are %d seats left in the cinema.", n - countPeople);
-        System.out.printf("Cinema income - %.0f lv.", totalSum);
+
+        if (input.equals("Movie time!")) {
+            System.out.printf("There are %d seats left in the cinema.%n", capacity - seatsTaken);
+        } else {
+            System.out.println("The cinema is full.");
+        }
+
+        System.out.printf("Cinema income - %d lv.", totalIncome);
     }
 }
