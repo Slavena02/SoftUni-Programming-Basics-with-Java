@@ -26,7 +26,7 @@ public class P04Club {
             }
             input = scanner.nextLine();
         }
-        if ( sumPrice >= sum) {
+        if ( price >= sum) {
             System.out.println("Target acquired.");
             System.out.printf("Club income - %.2f leva.", price);
         }else {
