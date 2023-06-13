@@ -21,7 +21,7 @@ public class P04Club {
                 sumPrice -= sumPrice * 0.25;
             }
             price += sumPrice;
-            if (sumPrice >= sum) {
+            if (price >= sum) {
                 break;
             }
             input = scanner.nextLine();
