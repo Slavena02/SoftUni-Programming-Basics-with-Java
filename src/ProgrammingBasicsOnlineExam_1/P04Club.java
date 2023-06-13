@@ -10,17 +10,17 @@ public class P04Club {
 
         double price = 0.00;
         double sumPrice = 0.00;
+
         String input = scanner.nextLine();
         while (!input.equals("Party!")) {
             int count = Integer.parseInt(scanner.nextLine());
             int length = input.length();
 
-            price += length;
-            sumPrice = price * count;
+            sumPrice = length * count;
             if (sumPrice % 2 == 1) {
                 sumPrice -= sumPrice * 0.25;
             }
-
+            price += sumPrice;
             if (sumPrice >= sum) {
                 break;
             }
@@ -28,10 +28,10 @@ public class P04Club {
         }
         if ( sumPrice >= sum) {
             System.out.println("Target acquired.");
-            System.out.printf("Club income - %.2f leva.", sumPrice);
+            System.out.printf("Club income - %.2f leva.", price);
         }else {
-            System.out.printf(" We need %.2f leva more.%n" , sum - sumPrice);
-            System.out.printf("Club income - %.2f leva.", sumPrice);
+            System.out.printf(" We need %.2f leva more.%n" , sum - price);
+            System.out.printf("Club income - %.2f leva.", price);
         }
 
     }
