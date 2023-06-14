@@ -10,8 +10,20 @@ public class P04Renovation {
         int width = Integer.parseInt(scanner.nextLine());
         int percent = Integer.parseInt(scanner.nextLine());
 
+        int sum = 0;
+        int needed = 0;
+
         String input = scanner.nextLine();
-        while (!input.equals("")){
+        while (!input.equals("Tired!")){
+            int liters = Integer.parseInt(scanner.nextLine());
+            if (sum == 0){
+                break;
+            }
+            sum = h * width * 4;
+            sum -= sum * 0.10;
+
+            sum = sum - liters;
+            input = scanner.nextLine();
 
         }
         
