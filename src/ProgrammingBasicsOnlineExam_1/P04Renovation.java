@@ -32,7 +32,7 @@ public class P04Renovation {
         if (sumPaint > sumMeters){
             System.out.printf("All walls are painted and you have %d l paint left!" , sumPaint - sumMeters);
         }else if (sumPaint == sumMeters){
-            System.out.printf("All walls are painted! Great job, Pesho!");
+            System.out.println("All walls are painted! Great job, Pesho!");
         }
     }
 }
