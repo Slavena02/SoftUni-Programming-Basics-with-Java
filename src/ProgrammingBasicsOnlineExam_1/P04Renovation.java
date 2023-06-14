@@ -11,19 +11,28 @@ public class P04Renovation {
         int percent = Integer.parseInt(scanner.nextLine());
 
 
-         int sum = h * width * 4;
-         sum -= sum * 0.10;
+         int sumMeters = h * width * 4;
+         sumMeters -= sumMeters * 0.10;
+
+         int sumPaint = 0;
 
         String input = scanner.nextLine();
         while (!input.equals("Tired!")) {
             int liters = Integer.parseInt(input);
-
-                sum -= liters;
-                if (sum == 0) {
+               sumPaint += liters;
+                sumMeters -= liters;
+                if (sumMeters == 0) {
                     break;
                 }
                 input = scanner.nextLine();
-
+        }
+        if (input.equals("Tired!")) {
+            System.out.printf("%d quadratic m left.", sumMeters);
+        }
+        if (sumPaint > sumMeters){
+            System.out.printf("All walls are painted and you have %d l paint left!" , sumPaint - sumMeters);
+        }else if (sumPaint == sumMeters){
+            System.out.printf("All walls are painted! Great job, Pesho!");
         }
     }
 }
