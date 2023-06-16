@@ -12,7 +12,7 @@ public class P04Renovation {
 
 
          int sumMeters = h * width * 4;
-         sumMeters -= sumMeters * 0.10;
+         sumMeters -= sumMeters * percent;
 
          int sumPaint = 0;
 
@@ -21,7 +21,7 @@ public class P04Renovation {
             int liters = Integer.parseInt(input);
                sumPaint += liters;
                 sumMeters -= liters;
-                if (sumMeters == 0) {
+                if (sumPaint >= sumMeters) {
                     break;
                 }
                 input = scanner.nextLine();
