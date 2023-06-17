@@ -36,7 +36,7 @@ public class ex3 {
                 break;
         }
         if (dayOfMonth <= 22){
-            if (priceProduct >= 100 || priceProduct < 200){
+            if (priceProduct >= 100 && priceProduct < 200){
                 priceProduct -= priceProduct * 0.15;
             }else {
                 priceProduct -= priceProduct * 0.25;
