@@ -7,7 +7,9 @@ public class P01StudentInformation {
         Scanner scanner = new Scanner(System.in);
 
         String name = scanner.nextLine();
+
         int age =  Integer.parseInt(scanner.nextLine());
+
         double grade =  Double.parseDouble(scanner.nextLine());
 
 
