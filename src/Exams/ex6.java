@@ -21,6 +21,7 @@ public class ex6 {
 
             double averageGoldPerDay = totalGold / days;
 
+
             if (averageGoldPerDay >= expectedAverageGold) {
                 System.out.printf("Good job! Average gold per day: %.2f.%n", averageGoldPerDay);
             } else {
