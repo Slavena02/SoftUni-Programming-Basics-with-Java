@@ -23,7 +23,6 @@ public class ex5 {
             }
             input = scanner.nextLine();
         }
-
         double childToysPrice = child * toys;
         double maturePulloverPrice = mature * pullover;
 
