@@ -22,7 +22,6 @@ public class ex1 {
                 double totalPrintingCost = (pagesCost + coversCost) * paperDiscountPercentage;
 
                 double designerPayment = totalPrintingCost + designerFee;
-
                 double teamPaymentPercentageDecimal = teamPaymentPercentage / 100.0;
                 double avtonomPayment = designerPayment * (1 - teamPaymentPercentageDecimal);
 
