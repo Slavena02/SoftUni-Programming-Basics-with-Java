@@ -25,7 +25,6 @@ public class ex4 {
                 group3++;
             }
         }
-
         double totalKg = totalGrams / 1000.00;
         double totalSumFood = totalKg * 12.45;
 
