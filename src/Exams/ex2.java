@@ -17,6 +17,7 @@ public class ex2 {
 
                 double totalCost = beerPrice + totalSumChips;
 
+
                 if (budget >= totalCost) {
                     System.out.printf("%s bought a snack and has %.2f leva left.", fanName, budget - totalCost);
                 } else {
