@@ -42,7 +42,6 @@ public class ex3 {
                 priceProduct -= priceProduct * 0.25;
             }
         }
-
         if ( dayOfMonth <= 15){
             priceProduct -= priceProduct * 0.10;
         }
