@@ -13,4 +13,5 @@ public class P06ConcatenateDate {
 
         System.out.printf("You are %s %s, a %d-years old person from %s." , firstName , lastName , age , town);
     }
+
 }
