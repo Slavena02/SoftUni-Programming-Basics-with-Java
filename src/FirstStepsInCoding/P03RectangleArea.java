@@ -11,6 +11,7 @@ public class P03RectangleArea {
 
     int a = Integer.parseInt(scanner.nextLine());
     int b = Integer.parseInt(scanner.nextLine());
+
     int area = a * b;
 
 
