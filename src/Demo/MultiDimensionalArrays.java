@@ -2,7 +2,7 @@ package Demo;
 
 import java.util.Scanner;
 
-public class demo1 {
+public class MultiDimensionalArrays {
     public static void main(String[] args) {
         Scanner scanner = new Scanner (System.in);
 
