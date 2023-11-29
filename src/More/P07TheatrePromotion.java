@@ -10,37 +10,32 @@ public class P07TheatrePromotion {
         String day = scanner.nextLine().toLowerCase();
         int age = Integer.parseInt(scanner.nextLine());
 
-        double price  = 0;
+        double price = 0.0;
 
-        switch (day) {
-            case "Weekday":
-                if (0 <= age && age <= 18||age > 64 && age <= 122 ){
-                    price = 12;
-                } else if (age > 18 && age <= 64) {
-                    price = 18;
-                }else{
-                    System.out.println("Error");
-                }
-            case "Weekend":
-                if (0 <= age && age <= 18 || age > 64 && age <= 122){
-                    price = 15;
-                } else if (age > 18 && age <= 64) {
-                    price = 20;
-                }else{
-                    System.out.println("Error");
-                }
-            case "Holiday":
-                if (0 <= age && age <= 18) {
-                    price = 5;
-                } else if (age > 18 && age <= 64) {
-                    price = 12;
-                } else if (age > 64 && age <= 122) {
-                    price = 10;
-                }else{
-                    System.out.println("Error");
-                }
+        if (day.equals("Weekday")) {
+            if (age >=0 && age <= 18 || age > 64 && age <= 122) {
+                price = 12;
+            } else if (age > 18 && age <= 64) {
+                price = 18;
+            }
+        } else if (day.equals("Weekend")) {
+            if (0 <= age && age <= 18 || age > 64 && age <= 122) {
+                price = 15;
+            } else if (age > 18 && age <= 64) {
+            }
+        } else if (day.equals("Holiday"))
+            if (0 <= age && age <= 18) {
+                price = 5;
+            } else if (age > 18 && age <= 64) {
+                price = 12;
+            } else if (age > 64 && age <= 122) {
+                price = 10;
+            }
+        if (price != 0) {
+            System.out.println(price);
+        } else {
+            System.out.println("Error!");
         }
-        System.out.println(price);
 
     }
 
