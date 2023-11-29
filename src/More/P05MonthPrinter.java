@@ -31,6 +31,8 @@ public class P05MonthPrinter {
             System.out.println("November ");
         }else if (month == 12){
             System.out.println("December ");
+        }else{
+            System.out.println("Error");
         }
     }
 }
