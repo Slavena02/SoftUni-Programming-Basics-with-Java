@@ -12,18 +12,18 @@ public class P07TheatrePromotion {
 
         double price = 0.0;
 
-        if (day.equals("Weekday")) {
+        if (day.equals("weekday")) {
             if (age >=0 && age <= 18 || age > 64 && age <= 122) {
                 price = 12;
             } else if (age > 18 && age <= 64) {
                 price = 18;
             }
-        } else if (day.equals("Weekend")) {
+        } else if (day.equals("weekend")) {
             if (0 <= age && age <= 18 || age > 64 && age <= 122) {
                 price = 15;
             } else if (age > 18 && age <= 64) {
             }
-        } else if (day.equals("Holiday"))
+        } else if (day.equals("holiday"))
             if (0 <= age && age <= 18) {
                 price = 5;
             } else if (age > 18 && age <= 64) {
@@ -32,7 +32,7 @@ public class P07TheatrePromotion {
                 price = 10;
             }
         if (price != 0) {
-            System.out.println(price);
+            System.out.printf("%.0f" + "$" ,price );
         } else {
             System.out.println("Error!");
         }
