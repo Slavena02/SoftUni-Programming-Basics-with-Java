@@ -10,7 +10,7 @@ public class P12EvenNumber {
 
         while (!isEvenNumber) {
 
-            int number = Math.abs(Integer.parseInt(scanner.nextLine()));
+          int number = Math.abs(Integer.parseInt(scanner.nextLine()));
 
             if (number % 2 == 0) {
                 isEvenNumber = true;
