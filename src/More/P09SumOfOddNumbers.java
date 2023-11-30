@@ -10,7 +10,7 @@ public class P09SumOfOddNumbers {
 
         int sum = 0;
 
-        for (int num1 = 1; num1 <= num; num1++) {
+        for (int num1 = 0; num1 < num; num1++) {
 
             if (num1 % 2 == 1) {
                 sum += num1;
