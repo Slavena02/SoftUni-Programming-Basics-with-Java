@@ -17,7 +17,7 @@ public class P09SumOfOddNumbers {
             next += 2;
 
         }
-            System.out.println(sum);
+            System.out.printf("Sum: %d" ,sum);
 
     }
 }
