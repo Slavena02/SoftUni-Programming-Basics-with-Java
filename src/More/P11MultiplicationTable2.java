@@ -12,16 +12,14 @@ public class P11MultiplicationTable2 {
 
         int sum = 0;
 
+        if(num2 > 10){
+            sum = num1 * num2;
+            System.out.println(num1 + " X " + num2 + " = " + sum);
+        }
         for (int i = num2; i <=10 ; i++) {
             sum = num1 * num2;
             System.out.println(num1 + " X " + num2 + " = " + sum);
             num2++;
         }
-        if(num2 > 10){
-            sum = num1 * num2;
-            System.out.println(num1 + " X " + num2 + " = " + sum);
-        }
-
-
     }
 }
