@@ -16,7 +16,7 @@ public class P12EvenNumber {
                 isEvenNumber = true;
                 System.out.printf("The number is: %d", number);
             } else {
-                System.out.println("Take as an input an even number.");
+                System.out.println("Please write an even number.");
             }
 
         }
