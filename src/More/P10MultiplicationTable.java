@@ -12,7 +12,6 @@ public class P10MultiplicationTable {
 
             for (int num1 =1 ; num1 <= 10 ; num1++){
                 sum = num * num1;
-                System.out.printf("%d X %d = %d" , num , num1 , sum);
-            }
+                System.out.println(num + " X " + num1 + " = " + sum);            }
         }
     }
