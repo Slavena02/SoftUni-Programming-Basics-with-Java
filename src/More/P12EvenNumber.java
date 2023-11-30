@@ -6,15 +6,20 @@ public class P12EvenNumber {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        int number = Integer.parseInt(scanner.nextLine());
+        boolean isEvenNumber = false;
 
-        for (int i = 1 ; i <=  number ; i++) {
-            if(number % 2 == 1){
-                System.out.println("Please write an even number.");
-            }else{
-                System.out.printf("The number is: %d" , number);
+        while (!isEvenNumber) {
+
+            int number = Math.abs(Integer.parseInt(scanner.nextLine()));
+
+            if (number % 2 == 0) {
+                isEvenNumber = true;
+                System.out.printf("The number is: %d", number);
+            } else {
+                System.out.println("Take as an input an even number.");
             }
 
         }
     }
 }
+
