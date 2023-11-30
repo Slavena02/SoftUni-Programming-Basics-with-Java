@@ -6,15 +6,16 @@ public class P09SumOfOddNumbers {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        int num = Integer.parseInt(scanner.nextLine());
+        int n= Integer.parseInt(scanner.nextLine());
 
+        int next = 1 ;
         int sum = 0;
 
-        for (int num1 = 0; num1 < num; num1++) {
-            if (num1 % 2 == 1) {
-                sum += num1;
-                System.out.println(num1);
-            }
+        for (int num1 = 1; num1 <= n; num1++) {
+            System.out.println(next);
+            sum +=next;
+            next += 2;
+
         }
             System.out.println(sum);
 
